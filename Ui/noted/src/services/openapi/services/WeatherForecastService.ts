@@ -1,0 +1,41 @@
+/* generated using openapi-typescript-codegen -- do no edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+import type { Create } from '../models/Create';
+import type { WeatherForecast } from '../models/WeatherForecast';
+
+import type { CancelablePromise } from '../core/CancelablePromise';
+import { OpenAPI } from '../core/OpenAPI';
+import { request as __request } from '../core/request';
+
+export class WeatherForecastService {
+
+    /**
+     * @returns WeatherForecast Success
+     * @throws ApiError
+     */
+    public static getWeatherForecast(): CancelablePromise<Array<WeatherForecast>> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/WeatherForecast',
+        });
+    }
+
+    /**
+     * @param requestBody 
+     * @returns any Success
+     * @throws ApiError
+     */
+    public static create(
+requestBody?: Create,
+): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/WeatherForecast',
+            body: requestBody,
+            mediaType: 'application/json',
+        });
+    }
+
+}
